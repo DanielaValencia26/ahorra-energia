@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!-- DOCTYPE: le dice al navegador que este documento es HTML5 -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de hábitos de energía</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body class="container py-3">
+    <header class="p-4 mb-4 bg-primary text-white rounded">
+        <h1>Encuesta de hábitos de energía</h1>
+        <p>Cuéntenos cómo usa la energía su familia.</p>
+        <nav class="nav nav-pills">
+            <a class="nav-link text-white" href="index.html">Inicio</a>
+            <a class="nav-link text-white" href="equipos.html">Equipos de mi casa</a>
+            <a class="nav-link text-white" href="registro.html">Registrar un equipo</a>
+            <a class="nav-link text-white" href="mi-factura.html">Mi factura</a>
+            <a class="nav-link text-white" href="encuesta.html">Encuesta de hábitos</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- alert: componente de Bootstrap que resalta un aviso -->
+        <div class="alert alert-info" role="alert">
+            Los campos marcados con asterisco (*) son obligatorios.
+        </div>
+
+        <!-- method="get": los datos enviados aparecen en la URL -->
+        <form action="encuesta.html" method="get">
+
+            <fieldset class="border rounded p-3 mb-3">
+                <legend>Datos de la familia</legend>
+
+                <p>
+                    <label for="nombre">Nombre de quien responde: *</label>
+                    <input class="form-control" type="text" id="nombre" name="nombre" required placeholder="Ej.: María Pérez">
+                </p>
+
+                <p>
+                    <label for="correo">Correo electrónico: *</label>
+                    <input class="form-control" type="email" id="correo" name="correo" required placeholder="nombre@correo.com">
+                </p>
+
+                <p>
+                    <label for="personas">Personas que viven en la casa (1 a 15): *</label>
+                    <input class="form-control" type="number" id="personas" name="personas" min="1" max="15" required>
+                </p>
+
+                <p>
+                    <label for="vivienda">Tipo de vivienda:</label>
+                    <select class="form-select" id="vivienda" name="vivienda">
+                        <option value="casa">Casa</option>
+                        <option value="apartamento">Apartamento</option>
+                        <option value="finca">Finca</option>
+                    </select>
+                </p>
+            </fieldset>
+
+            <fieldset class="border rounded p-3 mb-3">
+                <legend>Hábitos de consumo</legend>
+
+                <p>
+                    <label for="cuidado">¿Qué tanto cuidan la energía en casa? (0 = nada, 10 = muchísimo)</label>
+                    <!-- type="range": barra deslizante entre min y max -->
+                    <input class="form-range" type="range" id="cuidado" name="cuidado" min="0" max="10" value="5">
+                </p>
+
+                <p>¿Apagan las luces al salir de una habitación? *</p>
+                <input type="radio" id="luces-siempre" name="luces" value="siempre" required>
+                <label for="luces-siempre">Siempre</label>
+                <input type="radio" id="luces-aveces" name="luces" value="a-veces">
+                <label for="luces-aveces">A veces</label>
+                <input type="radio" id="luces-nunca" name="luces" value="casi-nunca">
+                <label for="luces-nunca">Casi nunca</label>
+
+                <p class="mt-3">Equipos que se usan todos los días:</p>
+                <p>
+                    <input type="checkbox" id="eq-tv" name="equipos" value="televisor">
+                    <label for="eq-tv">Televisor</label>
+                    <input type="checkbox" id="eq-pc" name="equipos" value="computador">
+                    <label for="eq-pc">Computador</label>
+                    <input type="checkbox" id="eq-plancha" name="equipos" value="plancha">
+                    <label for="eq-plancha">Plancha</label>
+                    <input type="checkbox" id="eq-ducha" name="equipos" value="ducha">
+                    <label for="eq-ducha">Ducha eléctrica</label>
+                </p>
+            </fieldset>
+
+            <fieldset class="border rounded p-3 mb-3">
+                <legend>Sus ideas</legend>
+                <p>
+                    <label for="ideas">¿Qué harían para ahorrar energía con El Niño 2026?</label>
+                    <textarea class="form-control" id="ideas" name="ideas" rows="4" placeholder="Escriba aquí sus ideas"></textarea>
+                </p>
+            </fieldset>
+
+            <button class="btn btn-primary" type="submit">Enviar encuesta</button>
+            <button class="btn btn-secondary" type="reset">Borrar</button>
+        </form>
+    </main>
+
+    <footer class="mt-4 text-muted">
+        <p>Ingeniería Web I · IU Digital de Antioquia · 2026-2</p>
+    </footer>
+</body>
+</html>

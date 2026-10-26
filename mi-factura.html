@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!-- DOCTYPE: le dice al navegador que este documento es HTML5 -->
+<html lang="es">
+<head>
+    <!-- head: informacion SOBRE la pagina (no se ve en la ventana) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi factura de energía</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body class="container py-3">
+    <header class="p-4 mb-4 bg-primary text-white rounded">
+        <h1>Mi factura de energía</h1>
+        <p>Lo que dice el recibo de agosto de 2026 (consumo del 1 al 30 de julio) frente a lo que consumen mis equipos.</p>
+        <nav class="nav nav-pills">
+            <a class="nav-link text-white" href="index.html">Inicio</a>
+            <a class="nav-link text-white" href="equipos.html">Equipos de mi casa</a>
+            <a class="nav-link text-white" href="registro.html">Registrar un equipo</a>
+            <a class="nav-link text-white" href="mi-factura.html">Mi factura</a>
+            <a class="nav-link text-white" href="encuesta.html">Encuesta de hábitos</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Mi recibo</h2>
+            <p>
+                Mi apartaestudio comparte el contador con la casa vecina, donde vive una persona sola.
+                Por eso el recibo mide el consumo de <strong>los dos hogares juntos</strong>.
+                Tapé los datos personales y los números de contrato, producto y medidor.
+            </p>
+            <div class="row g-3">
+                <div class="col-md-7">
+                    <figure>
+                        <img class="img-fluid" src="img/factura-historico.jpg" alt="Recibo de energía de agosto de 2026: consumo de 152 kWh, costo de 902,28 pesos por kWh y gráfica del histórico de consumos">
+                        <figcaption>Detalle de energía: 152 kWh a 902,28 COP/kWh y su histórico.</figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-5">
+                    <figure>
+                        <img class="img-fluid" src="img/factura-resumen.jpg" alt="Resumen de facturación de agosto de 2026: energía 119.552 pesos y total a pagar 128.979 pesos">
+                        <figcaption>Resumen: total a pagar $128.979.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Historial de consumo</h2>
+            <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <caption>Histórico de consumo que trae el recibo y valor de la energía</caption>
+                <thead>
+                    <tr>
+                        <th>Mes</th>
+                        <th>Consumo (kWh)</th>
+                        <th>Días facturados</th>
+                        <th>Valor de la energía (COP)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Agosto 2025</td><td>233</td><td>32</td><td>≈ 183.261 (estimado)</td></tr>
+                    <tr><td>Febrero 2026</td><td>235</td><td>29</td><td>≈ 184.834 (estimado)</td></tr>
+                    <tr><td>Marzo 2026</td><td>242</td><td>29</td><td>≈ 190.340 (estimado)</td></tr>
+                    <tr><td>Abril 2026</td><td>271</td><td>32</td><td>≈ 213.149 (estimado)</td></tr>
+                    <tr><td>Mayo 2026</td><td>183</td><td>29</td><td>≈ 143.934 (estimado)</td></tr>
+                    <tr><td>Junio 2026</td><td>160</td><td>30</td><td>≈ 125.844 (estimado)</td></tr>
+                    <tr><td>Julio 2026</td><td>169</td><td>32</td><td>≈ 132.923 (estimado)</td></tr>
+                    <tr><td>Agosto 2026 (actual)</td><td>152</td><td>30</td><td>119.552 (real)</td></tr>
+                </tbody>
+            </table>
+            </div>
+            <!-- alert: componente de Bootstrap que NO se vio en clase -->
+            <div class="alert alert-warning" role="alert">
+                El recibo solo trae el valor de agosto. Los demás valores son una
+                <strong>estimación</strong>: kWh × 786,53 COP, que es lo que costó cada kWh en agosto
+                después del subsidio (119.552,10 ÷ 152). Con otras entidades y el ajuste, el total
+                pagado en agosto fue <span class="badge text-bg-success">$128.979</span>.
+                No incluyo el recibo de octubre porque todavía no ha llegado, ni el de septiembre
+                porque no lo encontré. Por eso la tabla termina en el recibo de agosto.
+            </div>
+        </section>
+
+        <section>
+            <h2>Proyección de mis equipos frente a la factura</h2>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Mis 4 equipos</h3>
+                            <p class="card-text display-6">71 kWh</p>
+                            <p class="card-text">Proyección mensual de la página <a href="equipos.html">Equipos</a>.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Recibo de agosto (consumo de julio)</h3>
+                            <p class="card-text display-6">152 kWh</p>
+                            <p class="card-text">Consumo de los dos hogares del 1 al 30 de julio (30 días).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Diferencia</h3>
+                            <p class="card-text display-6">81 kWh</p>
+                            <p class="card-text">Mis 4 equipos explican el 47 % de la factura.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3 class="mt-4">¿Por qué hay 81 kWh de diferencia?</h3>
+            <ul>
+                <li><strong>Equipos sin ficha:</strong> la ducha eléctrica, el computador y otros aparatos
+                    no tienen etiqueta con la potencia, por eso no entraron en mi cálculo. La ducha suele
+                    ser de los equipos que más gasta.</li>
+                <li><strong>La casa vecina:</strong> el contador es compartido, así que parte de los 152 kWh
+                    es de ella.</li>
+                <li><strong>Estimación de horas:</strong> en la sanduchera y la arrocera usé promedios por
+                    día, y la nevera y la lavadora las calculé con los kWh de su etiqueta, que son un
+                    valor de referencia y no una medición en mi casa.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Recomendaciones de ahorro para mi familia</h2>
+            <ol>
+                <li><strong>Cuidar la nevera:</strong> es mi equipo medido que más gasta (39,9 kWh al mes,
+                    el 56 % de los 4 equipos). No abrirla sin necesidad, no meter comida caliente y
+                    dejarla separada de la pared.</li>
+                <li><strong>Lavar solo con la lavadora llena:</strong> cada ciclo gasta unos 0,86 kWh y
+                    lavo 2 cargas cada 2 días, unos 26 kWh al mes, el segundo equipo que más gasta.
+                    La lavadora aguanta 15 kg, así que puedo juntar la ropa y lavar menos veces.</li>
+                <li><strong>Recortar el tiempo de baño:</strong> la ducha eléctrica no tiene ficha, pero
+                    gasta mucha energía mientras está encendida. Bañarme en menos tiempo baja el consumo.</li>
+                <li><strong>Desconectar el computador cuando no lo uso:</strong> tampoco tiene ficha, pero
+                    conectado sigue gastando energía aunque esté en reposo.</li>
+                <li><strong>No preocuparme por la arrocera ni la sanduchera:</strong> juntas gastan
+                    unos 5 kWh al mes. Basta con desconectarlas al terminar.</li>
+                <li><strong>Hablar con mi vecina para que ella también ahorre:</strong> como el recibo
+                    es de los dos hogares, el ahorro de una sola no basta para bajar los 152 kWh. Podemos
+                    anotar la lectura del contador cada semana en la página
+                    <a href="registro.html">Registrar un equipo</a> para ver cómo cambia.</li>
+            </ol>
+        </section>
+    </main>
+
+    <footer class="mt-4 text-muted">
+        <p>Ingeniería Web I · IU Digital de Antioquia · 2026-2</p>
+    </footer>
+</body>
+</html>
